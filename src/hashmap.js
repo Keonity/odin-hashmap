@@ -1,3 +1,5 @@
+import { LinkedList } from "./linkedlist";
+
 class HashMap {
     constructor(size = 16) {
         this.hashmap = new Array(size);
@@ -17,7 +19,16 @@ class HashMap {
     }
 
     set(key, value) {
-        this.hashmap[this.hash(key)] = `${key}, ${value}`;
+        if (this.hashmap[this.hash(key)] != null) {
+            console.log(`Collision, adding node`);
+            this.hashmap[this.hash(key)].append(`${key}, ${value}`);
+        }
+        else {
+            console.log(`No collision, creating list`);
+            this.hashmap[this.hash(key)] = new LinkedList();
+            this.hashmap[this.hash(key)].append(`${key}, ${value}`);
+        }
+        // this.hashmap[this.hash(key)] = `${key}, ${value}`;
     }
 
     getLength() {
@@ -25,4 +36,4 @@ class HashMap {
     }
 }
 
-export { HashMap }
+export { HashMap };

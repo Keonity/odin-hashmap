@@ -12,4 +12,7 @@ console.log(`Apple Hash; ` + newHash.hash(`apple`));
 console.log(`Banana Hash; ` + newHash.hash(`banana`));
 console.log(`Berry Hash; ` + newHash.hash(`berry`));
 newHash.set('apple', 'red');
-console.log(newHash.hashmap[2]);
+newHash.hashmap[2].toString();
+
+newHash.set('apple', 'fruit');
+newHash.hashmap[2].toString();
