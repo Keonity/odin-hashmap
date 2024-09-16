@@ -63,7 +63,9 @@ class LinkedList {
     at(index) {
         let currNode = this.head;
         let currIndex = 0;
+        console.log(`currIndex: ` + currIndex);
         while (currIndex !== index) {
+            console.log(`currNode: ` + currNode);
             currNode = currNode.nextNode;
             currIndex++;
         }

@@ -19,8 +19,19 @@ class HashMap {
     }
 
     set(key, value) {
+        let hashIndex = this.hash(key);
+        console.log(hashIndex);
         if (this.hashmap[this.hash(key)] != null) {
             console.log(`Collision, adding node`);
+            let currNode = this.hashmap[this.hash(key)].head; // Initialize to head
+            while (currNode) {
+                if ((currNode.getValue()).includes(`${key}`)) {
+                   currNode.setValue(`${key}, ${value}`);
+                   return; 
+                }
+                currNode = currNode.nextNode;
+            }
+            console.log(`Adding node`);
             this.hashmap[this.hash(key)].append(`${key}, ${value}`);
         }
         else {
@@ -28,7 +39,6 @@ class HashMap {
             this.hashmap[this.hash(key)] = new LinkedList();
             this.hashmap[this.hash(key)].append(`${key}, ${value}`);
         }
-        // this.hashmap[this.hash(key)] = `${key}, ${value}`;
     }
 
     getLength() {
