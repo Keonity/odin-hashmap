@@ -7,3 +7,9 @@ const newHash = new HashMap();
 const newHash2 = new HashMap(32);
 console.log(newHash.getLength());
 console.log(newHash2.getLength());
+
+console.log(`Apple Hash; ` + newHash.hash(`apple`));
+console.log(`Banana Hash; ` + newHash.hash(`banana`));
+console.log(`Berry Hash; ` + newHash.hash(`berry`));
+newHash.set('apple', 'red');
+console.log(newHash.hashmap[2]);
