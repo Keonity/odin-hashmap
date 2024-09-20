@@ -4,6 +4,7 @@ class HashMap {
     constructor(size = 16) {
         this.hashmap = new Array(size);
         this.capacity = size;
+        this.size = 0;
     }
 
     hash(key) {
@@ -32,12 +33,16 @@ class HashMap {
                 currNode = currNode.nextNode;
             }
             console.log(`Adding node`);
+            this.size++;
             this.hashmap[this.hash(key)].append(`${key}, ${value}`);
+            return;
         }
         else {
             console.log(`No collision, creating list`);
             this.hashmap[this.hash(key)] = new LinkedList();
+            this.size++;
             this.hashmap[this.hash(key)].append(`${key}, ${value}`);
+            return;
         }
     }
 
@@ -77,10 +82,22 @@ class HashMap {
         if (this.hashmap[hashIndex] != null) {
             if (this.hashmap[hashIndex].size === 1) {
                 this.hashmap[hashIndex] = new LinkedList();
+                this.size--;
                 return true;
             }
+            this.size--;
             return this.hashmap[hashIndex].remove(this.get(key));
         }
+    }
+
+    length() {
+        return this.size;
+    }
+
+    clear() {
+        this.hashmap = new Array(16);
+        this.capacity = 16;
+        this.size = 0;
     }
 
     getLength() {

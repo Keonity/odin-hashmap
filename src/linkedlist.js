@@ -132,6 +132,10 @@ class LinkedList {
     }
 
     toString() {
+        if (this.size <= 0) {
+            console.log(`Empty list.`);
+            return;
+        }
         let listString = '';
         let currNode = this.head;
         let currIndex = 0;

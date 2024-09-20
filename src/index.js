@@ -26,8 +26,23 @@ console.log(newHash.get(`b`));
 console.log(newHash.has(`apple`));
 console.log(newHash.has(`fl`));
 
+console.log(`Length: ${newHash.length()}`);
+
 newHash.hashmap[2].toString();
 console.log(newHash.remove(`apple`));
+
+console.log(`Length: ${newHash.length()}`);
 newHash.hashmap[2].toString();
 console.log(newHash.remove(`b`));
+
+console.log(`Length: ${newHash.length()}`);
 newHash.hashmap[2].toString();
+
+newHash.set('b', 'blue');
+newHash.hashmap[2].toString();
+newHash.set('apple', 'fruit');
+newHash.hashmap[2].toString();
+
+console.log(newHash.hashmap[2]);
+newHash.clear();
+console.log(newHash.hashmap[2]);
