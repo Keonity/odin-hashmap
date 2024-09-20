@@ -22,3 +22,6 @@ newHash.hashmap[2].toString();
 
 console.log(newHash.get(`apple`));
 console.log(newHash.get(`b`));
+
+console.log(newHash.has(`apple`));
+console.log(newHash.has(`fl`));

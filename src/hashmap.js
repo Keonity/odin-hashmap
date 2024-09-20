@@ -56,6 +56,21 @@ class HashMap {
         return null;
     }
 
+    has(key) {
+        let hashIndex = this.hash(key);
+        console.log(`Has: ${key}, Hash: ${hashIndex}`);
+        if (this.hashmap[hashIndex] != null) {
+            let currNode = this.hashmap[hashIndex].head;
+            while (currNode) {
+                if ((currNode.getValue()).includes(`${key}`)) {
+                    return true;
+                }
+                currNode = currNode.nextNode;
+            }
+        }
+        return false;
+    }
+
     getLength() {
         return this.hashmap.length;
     }
