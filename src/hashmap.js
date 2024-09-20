@@ -71,6 +71,18 @@ class HashMap {
         return false;
     }
 
+    remove(key) {
+        let hashIndex = this.hash(key);
+        console.log(`Remove: ${key}, Hash: ${hashIndex}`);
+        if (this.hashmap[hashIndex] != null) {
+            if (this.hashmap[hashIndex].size === 1) {
+                this.hashmap[hashIndex] = new LinkedList();
+                return true;
+            }
+            return this.hashmap[hashIndex].remove(this.get(key));
+        }
+    }
+
     getLength() {
         return this.hashmap.length;
     }

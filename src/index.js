@@ -25,3 +25,9 @@ console.log(newHash.get(`b`));
 
 console.log(newHash.has(`apple`));
 console.log(newHash.has(`fl`));
+
+newHash.hashmap[2].toString();
+console.log(newHash.remove(`apple`));
+newHash.hashmap[2].toString();
+console.log(newHash.remove(`b`));
+newHash.hashmap[2].toString();

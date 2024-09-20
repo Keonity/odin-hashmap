@@ -36,6 +36,25 @@ class LinkedList {
         this.size = this.size + 1;
     }
 
+    remove(value) {
+        let prevNode = this.head;
+        let currNode = this.head;
+
+        while (currNode) {
+            if (currNode.value === value) {
+                prevNode.nextNode = currNode.nextNode;
+                this.size = this.size - 1;
+                console.log(`Removed: ${currNode}`);
+                return true;
+            }
+            prevNode = currNode;
+            currNode = currNode.nextNode;
+        }
+
+        console.log(`Value not found in list.`);
+        return false;
+    }
+
     get size() {
         return this._size;
     }
