@@ -19,3 +19,6 @@ newHash.set('b', 'blue');
 newHash.hashmap[2].toString();
 newHash.set('apple', 'fruit');
 newHash.hashmap[2].toString();
+
+console.log(newHash.get(`apple`));
+console.log(newHash.get(`b`));
