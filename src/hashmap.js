@@ -100,6 +100,63 @@ class HashMap {
         this.size = 0;
     }
 
+    keys() {
+        let returnArray = new Array();
+        for (let i = 0; i < this.capacity; i++) {
+            if (this.hashmap[i] !== null && typeof this.hashmap[i] !== 'undefined') {
+                console.log(this.hashmap[i]);
+                let currNode = this.hashmap[i].head;
+                while (currNode) {
+                    console.log(currNode.value.substr(0, currNode.value.indexOf(`,`)));
+                    returnArray.push(currNode.value.substr(0, currNode.value.indexOf(`,`)));
+                    currNode = currNode.nextNode;
+                }
+                return returnArray;
+            }
+            else {
+                console.log(`Null`);
+            }
+        }
+    }
+
+    values() {
+        let returnArray = new Array();
+        for (let i = 0; i < this.capacity; i++) {
+            if (this.hashmap[i] !== null && typeof this.hashmap[i] !== 'undefined') {
+                console.log(this.hashmap[i]);
+                let currNode = this.hashmap[i].head;
+                while (currNode) {
+                    console.log(currNode.value.substr(currNode.value.indexOf(`,`) + 2));
+                    returnArray.push(currNode.value.substr(currNode.value.indexOf(`,`) + 2));
+                    currNode = currNode.nextNode;
+                }
+                return returnArray;
+            }
+            else {
+                console.log(`Null`);
+            }
+        }
+    }
+
+    entries() {
+        let returnArray = new Array();
+        for (let i = 0; i < this.capacity; i++) {
+            if (this.hashmap[i] !== null && typeof this.hashmap[i] !== 'undefined') {
+                console.log(this.hashmap[i]);
+                let currNode = this.hashmap[i].head;
+                while (currNode) {
+                    console.log(currNode.value);
+                    returnArray.push(currNode.value);
+                    currNode = currNode.nextNode;
+                }
+                return returnArray;
+            }
+            else {
+                console.log(`Null`);
+            }
+        }
+    }
+
     getLength() {
         return this.hashmap.length;
     }

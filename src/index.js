@@ -43,6 +43,10 @@ newHash.hashmap[2].toString();
 newHash.set('apple', 'fruit');
 newHash.hashmap[2].toString();
 
+console.log(newHash.keys());
+console.log(newHash.values());
+console.log(newHash.entries());
+
 console.log(newHash.hashmap[2]);
 newHash.clear();
 console.log(newHash.hashmap[2]);
