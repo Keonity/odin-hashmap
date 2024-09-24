@@ -151,38 +151,39 @@ class HashMap {
         let returnArray = new Array();
         for (let i = 0; i < this.capacity; i++) {
             if (this.hashmap[i] !== null && typeof this.hashmap[i] !== 'undefined') {
-                console.log(this.hashmap[i]);
+                // console.log(this.hashmap[i]);
                 let currNode = this.hashmap[i].head;
                 while (currNode) {
-                    console.log(currNode.value.substr(0, currNode.value.indexOf(`,`)));
+                    // console.log(currNode.value.substr(0, currNode.value.indexOf(`,`)));
                     returnArray.push(currNode.value.substr(0, currNode.value.indexOf(`,`)));
                     currNode = currNode.nextNode;
                 }
-                return returnArray;
             }
             else {
                 // console.log(`Keys Null`);
             }
         }
+        return returnArray;
     }
 
     values() {
         let returnArray = new Array();
         for (let i = 0; i < this.capacity; i++) {
             if (this.hashmap[i] !== null && typeof this.hashmap[i] !== 'undefined') {
-                console.log(this.hashmap[i]);
+                // console.log(this.hashmap[i]);
                 let currNode = this.hashmap[i].head;
                 while (currNode) {
-                    console.log(currNode.value.substr(currNode.value.indexOf(`,`) + 2));
+                    // console.log(currNode.value.substr(currNode.value.indexOf(`,`) + 2));
                     returnArray.push(currNode.value.substr(currNode.value.indexOf(`,`) + 2));
                     currNode = currNode.nextNode;
                 }
-                return returnArray;
+                // return returnArray;
             }
             else {
                 // console.log(`Values Null`);
             }
         }
+        return returnArray;
     }
 
     entries() {

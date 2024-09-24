@@ -40,5 +40,9 @@ console.log(newHash.size);
 console.log(newHash.hashmap);
 console.log(newHash.has(`moon`));
 console.log(newHash.get(`moon`));
-
+console.log(newHash.length());
+console.log(newHash.keys());
+console.log(newHash.values());
+newHash.clear();
+console.log(newHash.length());
 // 15 entries
